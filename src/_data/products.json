@@ -1,0 +1,64 @@
+[
+{
+  "title": "Canadian Ale: Pine & Stone",
+  "handle": "canadian-ale-pine-stone",
+  "description": "A bold Canadian ale crafted with the crisp bite of pine and the earthy depth of stone. This brew delivers a distinctive character that balances aromatic hop notes with a smooth, clean finish. Perfect for those seeking a full-flavored ale with personality and complexity in every sip.",
+  "abv": "5.6%",
+  "featured_image": "/images/canadianAle.png",
+  "metafields": {
+    "custom": {
+      "theme_bg": "#82C45A",
+      "theme_text": "#2D6B43",
+      "theme_accent": "#1FCEAC",
+      "flavor_notes": ["Pine", "Earthy", "Clean Finish"]
+
+    }
+  }
+}, 
+{
+  "title": "Lakefront Linger Sour",
+  "handle": "lakefront-linger-sour",
+  "description": "Lakefront Linger Sour is a refreshing craft sour ale that captures the essence of summer by the water. Brewed with tart cherry notes, this beer delivers a perfect balance of bright acidity and subtle fruit complexity. The smooth, crisp finish makes it ideal for leisurely afternoons on the porch or by the shore.",
+  "abv": "4.8%",
+   "featured_image": "/images/lakefrontLinger.png",
+  "metafields": {
+    "custom": {
+      "theme_bg": "#B0E8DE",
+      "theme_text": "#355468",
+      "theme_accent": "#ad392e",
+      "flavor_notes": ["Tart Cherry", "Bright", "Crisp"]
+    
+    }
+  }
+},
+{
+  "title": "Wilderness Walker IPA",
+  "handle": "wilderness-walker-ipa",
+  "description": "Wilderness Walker IPA is a bold, hop-forward ale crafted for adventurers and IPA enthusiasts. This full-bodied brew delivers a vibrant balance of citrus and pine notes with a crisp, clean finish.",
+  "abv": "6.7%",
+    "featured_image": "/images/wildernessWalker.png",
+  "metafields": {
+    "custom": {
+      "theme_bg": "#FA812E",
+      "theme_text": "#53190D",
+      "theme_accent": "#D5C3C3",
+      "flavor_notes": ["Citrus Zest", "Pine", "Bold Hops"]
+    
+    }
+  }
+}, {
+  "title": "Desert Drift",
+  "handle": "desert-drift",
+  "description": "Desert Drift is a sun-soaked dry ale crafted for those who crave bold, refreshing flavor under open skies. This crisp, light-bodied brew delivers a clean finish with subtle citrus notes and a smooth, dry character.",
+  "abv": "5.2%",
+   "featured_image": "/images/desertDrift.png",
+  "metafields": {
+    "custom": {
+      "theme_bg": "#F2EEE5",
+      "theme_text": "#B85A16",
+      "theme_accent": "#18344A",
+      "flavor_notes": ["Dry", "Subtle Citrus", "Sun-Baked"]
+    }
+  }
+}
+]

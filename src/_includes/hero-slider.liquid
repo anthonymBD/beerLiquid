@@ -1,0 +1,71 @@
+<section class="hero-slider" data-hero-slider>
+
+  <div class="hero-slider__wrapper">
+
+    {% for product in products %}
+        {%- assign product_image_src = '' -%}
+        {%- assign _img = product.img | default: product.featured_image -%}
+        {%- if _img -%}
+          {%- if _img contains '://' -%}
+            {%- assign product_image_src = _img -%}
+          {%- elsif _img contains '/' -%}
+            {%- assign product_image_src = _img -%}
+          {%- else -%}
+            {%- assign product_image_src = '/images/' | append: _img -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        <div
+          class="hero-slide"
+          data-handle="{{ product.handle }}"
+          style="
+            --slide-bg: {{ product.metafields.custom.theme_bg }};
+            --slide-text: {{ product.metafields.custom.theme_text }};
+            --slide-accent: {{ product.metafields.custom.theme_accent }};
+          "
+        >
+
+          <div class="hero-grid">
+
+            <div class="hero-content">
+
+              {%- if product.metafields.custom.flavor_notes.size > 0 -%}
+                <p class="hero-flavor">{%- for note in product.metafields.custom.flavor_notes -%}{{ note }}{%- unless forloop.last -%}, {% endunless %}{%- endfor -%}</p>
+              {%- endif -%}
+
+              <h1 class="hero-title">
+                {{ product.title }}
+              </h1>
+
+              <p class="hero-abv">
+                ABV {{ product.abv }}
+              </p>
+
+              <div class="hero-description">
+                {{ product.description }}
+              </div>
+
+              <a href="/products/{{ product.handle }}/" class="btn-primary">
+                Explore Beer
+              </a>
+
+            </div>
+
+            <div class="hero-media">
+              {% if product_image_src %}
+                <img
+                  src="{{ product_image_src }}"
+                  alt="{{ product.title }}"
+                  loading="eager"
+                >
+              {% endif %}
+            </div>
+
+          </div>
+
+        </div>
+
+    {% endfor %}
+
+  </div>
+</section>
