@@ -1,0 +1,62 @@
+<section class="products" id="products">
+
+  <div class="container">
+
+    <header class="products-header">
+      <h2 class="section-title">Our Beers</h2>
+    </header>
+
+    <div class="product-grid">
+
+      {% for product in products %}
+
+        <article
+          class="product-card"
+          style="
+            --beer-bg: {{ product.metafields.custom.theme_bg }};
+            --beer-text: {{ product.metafields.custom.theme_text }};
+            --beer-accent: {{ product.metafields.custom.theme_accent }};
+          "
+        >
+
+          <a href="/products/{{ product.handle }}/" class="product-link">
+
+            <div class="product-can">
+              <img
+                src="{{ product.featured_image }}"
+                alt="{{ product.title }}"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="product-info">
+
+              <p class="product-flavor">
+                {{ product.metafields.custom.flavor_notes }}
+              </p>
+
+              <h3 class="product-name">
+                {{ product.title }}
+              </h3>
+
+              <p class="product-abv">
+                ABV {{ product.abv }}
+              </p>
+
+              <span class="product-cta">
+                Explore →
+              </span>
+
+            </div>
+
+          </a>
+
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>

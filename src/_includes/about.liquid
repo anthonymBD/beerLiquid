@@ -1,5 +1,25 @@
-<div class="about">
-<h1> {{ about.title }} </h1>
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="about__inner">
+    <h2 class="about__heading" id="about-heading">
+      {%- assign heading_lines = about.title | split: ',' -%}
+      {%- for line in heading_lines -%}
+        <span class="about__heading-line">{{ line | strip }}</span>
+      {%- endfor -%}
+    </h2>
 
-<p> {{ about.description }} </p>
-</div>
+    <p class="about__description">{{ about.description }}</p>
+
+    <ul class="about__stats" role="list">
+      <li class="about__stat">
+        <span class="about__stat-value">{{ products | size }}</span>
+        <span class="about__stat-label">Beers</span>
+      </li>
+      {%- for stat in about.stats -%}
+        <li class="about__stat">
+          <span class="about__stat-value">{{ stat.value }}</span>
+          <span class="about__stat-label">{{ stat.label }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

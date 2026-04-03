@@ -1,9 +1,14 @@
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
 
 @font-face {
   font-family: 'Satoshi-Regular';
-  src: url('../fonts/Satoshi-Regular.woff2') format('woff2'),
-       url('../fonts/Satoshi-Regular.woff') format('woff'),
-       url('../fonts/Satoshi-Regular.ttf') format('truetype');
+  src: url('../fonts/Satoshi-Regular.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -11,9 +16,7 @@
 
 @font-face {
   font-family: 'BespokeSans-Bold';
-  src: url('../fonts/BespokeSans-Bold.woff2') format('woff2'),
-       url('../fonts/BespokeSans-Bold.woff') format('woff'),
-       url('../fonts/BespokeSans-Bold.ttf') format('truetype');
+  src: url('../../fonts/BespokeSans-Bold.woff') format('woff');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
