@@ -8,6 +8,8 @@ module.exports = async function (eleventyConfig) {
       domDiff: false,
     },
     viteOptions: {
+      root: path.resolve(__dirname, "src"),
+
       resolve: {
         alias: {
           "/node_modules": path.resolve(__dirname, "node_modules"),
@@ -25,5 +27,6 @@ module.exports = async function (eleventyConfig) {
       input: "src",
       output: "dist",
     },
+    pathPrefix: "/",
   };
 };

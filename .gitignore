@@ -1,0 +1,75 @@
+# -------------------------
+# macOS system files
+# -------------------------
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.fseventsd
+
+# -------------------------
+# Node / Vite
+# -------------------------
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+vite.config.ts.timestamp*
+vite.config.js.timestamp*
+
+# -------------------------
+# Logs
+# -------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# -------------------------
+# Environment files
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# Editor / IDE files
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# OS / Misc
+# -------------------------
+Thumbs.db
+ehthumbs.db
+
+# -------------------------
+# Eleventy / Liquid
+# -------------------------
+/_site/
+/.cache/
+/.tmp/
+/eleventy-cache/
+
+# Liquid includes sometimes generate temp files
+*.liquid~
+*.html~
+
+# -------------------------
+# Sass / CSS build artifacts
+# -------------------------
+*.css.map
+*.sass-cache/
+*.scssc
+
+# -------------------------
+# Optional: ignore images you generate during dev
+# -------------------------
+*.tmp.jpg
+*.tmp.png

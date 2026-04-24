@@ -1,0 +1,36 @@
+<section id="testimonials" class="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+
+    <h2 class="testimonials-title" id="testimonials-heading">
+      {% assign heading_lines = testimonials.section.title | split: ',' %}
+      {% for line in heading_lines %}
+        <span class="testimonials__heading-line">{{ line | strip }}</span>
+      {% endfor %}
+    </h2>
+
+    <div class="testimonials-marquee">
+
+
+      <div class="testimonials-column">
+        {% for t in testimonials.section.testimonials %}
+        <div class="testimonial-card">
+        
+          <div class="testimonial-image-wrap">
+            <img class="testimonial-image" src="{{ t.image }}" alt="{{ t.author }}">
+          </div>
+        
+          <div class="testimonial-content">
+            <p class="testimonial-quote">“{{ t.quote }}”</p>
+            <p class="testimonial-author">{{ t.author }} — {{ t.location }}</p>
+            <p class="testimonial-beer">{{ t.beer }}</p>
+          </div>
+        
+        </div>
+        {% endfor %}
+      </div>
+
+   
+     
+
+  </div>
+</section>

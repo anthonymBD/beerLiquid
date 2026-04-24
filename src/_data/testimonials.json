@@ -1,0 +1,39 @@
+{
+  "section": {
+    "title": "WHAT,PEOPLE,SAY",
+    "testimonials": [
+      {
+        "id": 1,
+        "quote": "Finally, a lager that doesn't taste like water. This is my go-to after a run.",
+        "author": "Sarah K.",
+        "location": "Vancouver",
+        "beer": "LIME LAGER",
+        "image": "../../images/profileTest.jpg"
+      },
+      {
+        "id": 2,
+        "quote": "Big IPA flavor without the bitterness. This is the IPA that converted me.",
+        "author": "James L.",
+        "location": "Toronto",
+        "beer": "CITRUS IPA",
+        "image": "https://via.placeholder.com/300x300?text=James+L"
+      },
+      {
+        "id": 3,
+        "quote": "Smooth, balanced, perfect for any occasion. I keep a 12-pack in my fridge.",
+        "author": "Emily R.",
+        "location": "Calgary",
+        "beer": "PALE ALE",
+        "image": "https://via.placeholder.com/300x300?text=Emily+R"
+      },
+      {
+        "id": 4,
+        "quote": "Rich and malty without being heavy. This is my fall go-to.",
+        "author": "Marcus T.",
+        "location": "Montreal",
+        "beer": "AMBER ALE",
+        "image": "https://via.placeholder.com/300x300?text=Marcus+T"
+      }
+    ]
+  }
+}

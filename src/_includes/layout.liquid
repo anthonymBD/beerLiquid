@@ -7,8 +7,18 @@
 <body data-barba="wrapper">
 
   <main data-barba="container" data-barba-namespace="{{ page.fileSlug }}">
-    {{ content }}
+ {% include "header.liquid" %}
+
+  {{ content }}
+
+ {% include "footer.liquid" %}
+
+
+
   </main>
+
+  
+  
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

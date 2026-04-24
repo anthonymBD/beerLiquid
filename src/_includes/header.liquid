@@ -1,0 +1,19 @@
+<header>
+ <nav>
+ <a href="{{ nav.header.logo.url }}" class="logo">
+    <img src="{{ nav.header.logo.image }}" alt="{{ nav.header.logo.alt }}" class="nav-logo">
+    </a>
+
+ 
+    <ul>
+      {% for item in nav.header.navigation %}
+        <li>
+          <a href="{{ item.url }}" 
+             {% if item.url == page.url %} class="active"{% endif %}  data-barba-prevent="self">
+             {{ item.label }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

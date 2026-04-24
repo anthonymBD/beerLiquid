@@ -1,7 +1,7 @@
 import barba from '@barba/core'
 import { gsap } from 'gsap'
 import "../sass/main.scss";
-import initHeroSlider from "./hero-slider"
+
 
 barba.init({
     transitions: [{
@@ -14,6 +14,3 @@ barba.init({
     }]
 })
 
-document.addEventListener("DOMContentLoaded", () => {
-    initHeroSlider()
-})

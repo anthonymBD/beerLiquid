@@ -1,0 +1,30 @@
+.cta-section {
+            background: #2D6B43;
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: clamp(60px, 12vw, 160px);
+            margin-bottom: 60px;
+            line-height: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 30px 100px;
+            border: 4px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(28px, 4vw, 48px);
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #2D6B43;
+            transform: scale(1.05);
+        }

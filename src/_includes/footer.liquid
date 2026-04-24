@@ -1,0 +1,42 @@
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Column 1 -->
+      <div>
+        <div class="footer-logo">
+          {{ nav.header.logo.text }}
+        </div>
+        <p class="footer-tagline">Bold flavors. Clean lines.</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div>
+        <ul class="footer-links">
+          {% for item in nav.header.navigation %}
+            <li>
+              <a 
+                href="{{ item.url }}"
+                {% if item.url == page.url %}class="active"{% endif %}
+              >
+                {{ item.label }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-legal">
+        <p>Drink Responsibly</p>
+        <p>Must be 19+ to purchase in Canada| 21+ USA</p>
+        <p>Proudly brewed in Canada</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+© {{ "now" | date: "%Y" }} {{ nav.header.logo.text }}. All rights reserved.
+    </div>
+  </div>
+</footer>

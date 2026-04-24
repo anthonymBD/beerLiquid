@@ -1,0 +1,175 @@
+---
+title: Test
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "products/{{ product.handle }}/"
+layout: layout.liquid
+---
+<div class="breadcrumb">
+  <a href="/" class="barba-link">Home</a>
+  <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  <a href="/#products" class="barba-link">Beers</a>
+  <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  <span>{{ product.title }}</span>
+</div>
+
+
+<section class="product"> 
+  <div class="product-image">
+  
+    <img src="{{ product.featured_image }}" alt="{{ product.title }}">
+  <div class="thumbs">
+    {% for image in product.images %}
+      <img src="{{ image }}" alt="{{ product.title }} thumbnail">
+    {% endfor %}
+  
+  
+  </div>
+
+ <div class="product-info" id="productInfo">
+
+<!-- Stock Badge -->
+<div class="pi-badge">
+  {% assign in_stock_items = product.pack_sizes | where: "in_stock", "true" %}
+  {% assign in_stock_count = in_stock_items | size %}
+
+  {% if in_stock_count > 0 %}
+    In Stock · Ships in 1–2 days
+  {% else %}
+    Out of Stock
+  {% endif %}
+</div>
+
+  <!-- Title -->
+  <h1 class="pi-name">{{ product.title }}</h1>
+
+  <!-- Sub Info -->
+  <div class="pi-sub">
+    <span>{{ product.abv }}</span>
+    <span>473ml</span>
+  </div>
+
+  <!-- Rating -->
+  <div class="pi-rating">
+    <div class="stars">
+      {% assign full_stars = product.rating | floor %}
+      {% assign half_star = product.rating | modulo: 1 %}
+
+      {% for i in (1..full_stars) %}
+        <span class="star">★</span>
+      {% endfor %}
+
+      {% if half_star > 0 %}
+        <span class="star half">★</span>
+      {% endif %}
+    </div>
+
+    <span class="rating-text">
+      {{ product.rating }} · 
+      <a href="#reviews">{{ product.reviews_count }} reviews</a>
+    </span>
+  </div>
+
+  <!-- Price -->
+<div class="pi-price">
+  <span class="price-main" id="priceMain">
+    ${{ product.pack_sizes[0].price }}
+  </span>
+
+  <span class="price-per" id="pricePer">
+    per {{ product.pack_sizes[0].label }}
+  </span>
+
+  {% assign best_value = product.pack_sizes | last %}
+  <span class="price-badge">
+    Best Value: {{ best_value.label }}
+  </span>
+</div>
+
+  <!-- Pack Size Buttons -->
+  <span class="pi-label">Pack Size</span>
+  <div class="pack-options">
+    {% for pack in product.pack_sizes %}
+      <button 
+        class="pack-btn {% if forloop.first %}active{% endif %}"
+        data-qty="{{ pack.size }}"
+        data-price="{{ pack.price }}"
+        data-unit="{{ pack.label }}"
+        {% unless pack.in_stock %}disabled class="out-stock"{% endunless %}
+      >
+        {{ pack.label }}
+        {% unless pack.in_stock %}
+          <span class="sold-out">Sold Out</span>
+        {% endunless %}
+      </button>
+    {% endfor %}
+  </div>
+
+  <!-- Quantity + Add to Cart -->
+  <div class="pi-cart-row">
+    <div class="qty-wrap">
+      <button class="qty-btn" id="qtyMinus">−</button>
+      <input class="qty-num" id="qtyInput" type="number" value="1" min="1">
+      <button class="qty-btn" id="qtyPlus">+</button>
+    </div>
+
+    <button class="add-cart" id="addCartBtn">
+      Add to Cart
+    </button>
+  </div>
+
+  <button class="buy-now">Buy It Now</button>
+
+  <!-- Description -->
+  <p class="pi-desc">
+    {{ product.description }}
+  </p>
+
+  <!-- Flavor / Feature Pills -->
+  <div class="pi-pills">
+    {% for note in product.metafields.custom.flavor_notes %}
+      <span class="pi-pill">{{ note }}</span>
+    {% endfor %}
+  </div>
+
+  <!-- Accordion -->
+  <div class="accordion">
+
+    <div class="acc-item">
+      <button class="acc-trigger" data-acc="specs">Product Details</button>
+      <div class="acc-body" id="acc-specs">
+        <div class="acc-body-inner">
+          <div class="specs-grid">
+            <span class="spec-key">ABV</span>
+            <span class="spec-val">{{ product.abv }}</span>
+
+            <span class="spec-key">Volume</span>
+            <span class="spec-val">473ml</span>
+
+            <span class="spec-key">Origin</span>
+            <span class="spec-val">Canada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-trigger" data-acc="pair">Pairs Well With</button>
+      <div class="acc-body" id="acc-pair">
+        <div class="acc-body-inner">
+          <ul>
+            {% for item in product.pairs_well_with %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+  
