@@ -6,7 +6,7 @@
     "abv": "5.6%",
     "rating": 4.6,
     "reviews_count": 128,
-    "featured_image": "/images/canadianAle.png",
+    "featured_image": "../images/canadianAle.png",
     "pack_sizes": [
       { "label": "Single Can", "size": "1", "price": 3.99, "in_stock": true },
       { "label": "6 Pack", "size": "6", "price": 12.99, "in_stock": false },

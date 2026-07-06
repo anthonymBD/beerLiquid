@@ -1,32 +1,64 @@
-<section id="testimonials" class="testimonials-section" aria-labelledby="testimonials-heading">
+<section id="testimonials" class="testimonials-section">
 
-  <div class="testimonials-titles">
-    {% assign heading_lines = testimonials.section.title | split: ',' %}
-    {% for line in heading_lines %}
-{% assign classes = "first-title,sec-title,third-title" | split: "," %}
+    {% assign headings = testimonials.section.title | split: "," %}
+    {% assign classes = "first-title,sec-title,third-title" | split: "," %}
 
-{% for line in heading_lines %}
-{% assign cls = classes[ forloop.index0 | modulo: classes.size ] %}
-<h2 class="t-title {{ cls }}" {% if forloop.first %}id="testimonials-heading" {% endif %}>
-  {{ line | strip }}
-</h2>
-{% endfor %}
-    {% endfor %}
-  </div>
+    <div class="testimonials-titles">
 
-  <div class="pin-box">
-    {% for t in testimonials.section.testimonials %}
-    <div class="vd-card" data-index="{{ forloop.index0 }}">
-      <div class="testimonial-image-wrap">
-        <img class="testimonial-image" src="{{ t.image }}" alt="{{ t.author }}">
-      </div>
-      <div class="card-overlay">
-        <p class="card-quote">"{{ t.quote }}"</p>
-        <p class="card-author">{{ t.author }} — {{ t.location }}</p>
-        <p class="card-beer">{{ t.beer }}</p>
-      </div>
+        {% for heading in headings %}
+
+            <h2
+                class="t-title {{ classes[forloop.index0] }}"
+                {% if forloop.first %}id="testimonials-heading"{% endif %}
+            >
+                {{ heading | strip }}
+            </h2>
+
+        {% endfor %}
+
     </div>
-    {% endfor %}
-  </div>
+
+    <div class="pin-box">
+
+        {% assign total = testimonials.section.testimonials.size %}
+        {% assign middle = total | divided_by: 2 %}
+
+        {% for t in testimonials.section.testimonials %}
+
+            {% assign offset = forloop.index0 | minus: middle %}
+
+            <article
+                class="vd-card"
+                style="
+                    --x: {{ offset | times: 180 }}px;
+                    --r: {{ offset | times: 7 }}deg;
+                ">
+
+                <img
+                    class="testimonial-image"
+                    src="{{ t.image }}"
+                    alt="{{ t.author }}">
+
+                <div class="card-overlay">
+
+                    <p class="card-quote">
+                        "{{ t.quote }}"
+                    </p>
+
+                    <p class="card-author">
+                        {{ t.author }} • {{ t.location }}
+                    </p>
+
+                    <p class="card-beer">
+                        {{ t.beer }}
+                    </p>
+
+                </div>
+
+            </article>
+
+        {% endfor %}
+
+    </div>
 
 </section>

@@ -16,23 +16,41 @@ layout: layout.liquid
 </div>
 
 
-<section class="product"> 
-  <div class="product-image">
-  
-    <img src="{{ product.featured_image }}" alt="{{ product.title }}">
-  <div class="thumbs">
-    {% for image in product.images %}
-      <img src="{{ image }}" alt="{{ product.title }} thumbnail">
-    {% endfor %}
-  
-  
+{%- assign featured_image_src = product.featured_image | default: "" -%}
+{%- if featured_image_src != "" and featured_image_src contains "../" -%}
+  {%- assign featured_image_src = featured_image_src | replace: "../", "/" -%}
+{%- endif -%}
+
+<section class="product">
+  <div class="product-images" id="productImages">
+    <div class="main-img" id="mainImg">
+      <img src="{{ featured_image_src }}" alt="{{ product.title }}">
+    </div>
+
+    <div class="thumbs">
+      {% if product.images and product.images.size > 0 %}
+        {% for image in product.images %}
+          {%- assign thumb_src = image -%}
+          {%- if thumb_src contains "../" -%}
+            {%- assign thumb_src = thumb_src | replace: "../", "/" -%}
+          {%- endif -%}
+          <div class="thumb{% if forloop.first %} active{% endif %}">
+            <img src="{{ thumb_src }}" alt="{{ product.title }} thumbnail {{ forloop.index }}">
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="thumb active">
+          <img src="{{ featured_image_src }}" alt="{{ product.title }} thumbnail">
+        </div>
+      {% endif %}
+    </div>
   </div>
 
  <div class="product-info" id="productInfo">
 
 <!-- Stock Badge -->
 <div class="pi-badge">
-  {% assign in_stock_items = product.pack_sizes | where: "in_stock", "true" %}
+  {% assign in_stock_items = product.pack_sizes | where: "in_stock", true %}
   {% assign in_stock_count = in_stock_items | size %}
 
   {% if in_stock_count > 0 %}
@@ -92,12 +110,12 @@ layout: layout.liquid
   <span class="pi-label">Pack Size</span>
   <div class="pack-options">
     {% for pack in product.pack_sizes %}
-      <button 
+      <button
         class="pack-btn {% if forloop.first %}active{% endif %}"
         data-qty="{{ pack.size }}"
         data-price="{{ pack.price }}"
         data-unit="{{ pack.label }}"
-        {% unless pack.in_stock %}disabled class="out-stock"{% endunless %}
+        {% unless pack.in_stock %}disabled{% endunless %}
       >
         {{ pack.label }}
         {% unless pack.in_stock %}
@@ -171,5 +189,4 @@ layout: layout.liquid
   </div>
 
 </div>
-
-  
+</section>

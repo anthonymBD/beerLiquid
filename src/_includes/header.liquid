@@ -1,5 +1,9 @@
 <header>
- <nav>
+ <nav style="
+          --bg: {{ nav.header.metafields.custom.theme_bg }};
+          --text: {{ nav.header.metafields.custom.theme_text }};
+          --accent: {{ nav.header.metafields.custom.theme_accent }};
+        ">
  <a href="{{ nav.header.logo.url }}" class="logo">
     <img src="{{ nav.header.logo.image }}" alt="{{ nav.header.logo.alt }}" class="nav-logo">
     </a>

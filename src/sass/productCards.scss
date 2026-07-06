@@ -1,16 +1,16 @@
-.products {
-            background: #0F7C7A;
+.beers-section {
+        background: color-mix(in srgb, var(--bg, #0F7C7A) 100%, black 30%);
             color: #fff;
             padding: 120px 0;
         }
 
-.section-title {
+.beers-section__title {
             font-size: clamp(80px, 15vw, 200px);
             margin-bottom: 80px;
             text-align: center;
         }
 
-.product-grid {
+.beers-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 80px;
@@ -18,7 +18,7 @@
             margin: 0 auto;
         }
 
-        .product-card {
+.beers-card {
             text-align: center;
             width: 100%;
             display: block;
@@ -27,7 +27,7 @@
             border-radius: 20px;
         }
 
-        .product-can {
+.beers-card__can {
             width: 100%;
             max-width: none;
             height: 600px;
@@ -39,42 +39,42 @@
             transition: transform 0.3s ease;
         }
 
-        .product-can__image {
+.beers-card__image {
             width: 100%;
             height: 100%;
             display: block;
             object-fit: cover;
         }
 
-        .product-card:hover .product-can,
-        .product-card:focus-visible .product-can {
+.beers-card:hover .beers-card__can,
+.beers-card:focus-visible .beers-card__can {
             transform: scale(1.05) rotate(2deg);
         }
 
-        .product-card:focus-visible {
+.beers-card:focus-visible {
             outline: 3px solid rgba(255, 255, 255, 0.85);
             outline-offset: 10px;
         }
 
-        .product-can.lime { background: rgba(45, 107, 67, 0.8); }
-        .product-can.citrus { background: rgba(184, 90, 22, 0.8); }
-        .product-can.pale { background: rgba(15, 124, 122, 0.8); }
-        .product-can.amber { background: rgba(138, 106, 46, 0.8); }
+.beers-card__can--lime { background: rgba(45, 107, 67, 0.8); }
+.beers-card__can--citrus { background: rgba(184, 90, 22, 0.8); }
+.beers-card__can--pale { background: rgba(15, 124, 122, 0.8); }
+.beers-card__can--amber { background: rgba(138, 106, 46, 0.8); }
 
-        .product-name {
+.beers-card__name {
             font-size: clamp(36px, 5vw, 72px);
             margin-bottom: 10px;
             text-transform: uppercase;
         }
 
-        .product-abv {
+.beers-card__abv {
             font-size: clamp(18px, 2vw, 28px);
             opacity: 0.8;
             margin-bottom: 20px;
             letter-spacing: 0.1em;
         }
 
-        .product-description {
+.beers-card__description {
             font-size: clamp(16px, 2vw, 24px);
             opacity: 0.9;
             letter-spacing: 0.05em;
@@ -82,7 +82,7 @@
         }
 
 @media (max-width: 1024px) {
-        .product-grid {
+        .beers-grid {
             grid-template-columns: 1fr;
             gap: 40px;
         }

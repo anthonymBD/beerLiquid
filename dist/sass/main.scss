@@ -1,10 +1,12 @@
-@use "./variables";
-@use "./hero";
-@use "./about";
-@use "./cards";
-@use "./testimonials";
-@use "./nav";
+@use "./variables.scss";
+@use "./hero.scss";
+@use "./about.scss";
+@use "./productCards.scss";
+@use "./productPage.scss";
+@use "./testimonials.scss";
+@use "./nav.scss";
 @use "./cta.scss";
 @use "./footer.scss";
+
 
 

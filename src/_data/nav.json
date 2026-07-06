@@ -27,6 +27,14 @@
         "label": "Contact",
         "url": "/contact"
       }
-    ]
+    ],
+    "metafields": {
+      "custom": {
+        "theme_bg": "#fff",
+        "theme_text": "#0F7C7A",
+        "theme_accent": "#0cce6d"
+      }
+    }
   }
+  
 }

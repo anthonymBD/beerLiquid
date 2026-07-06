@@ -16,7 +16,7 @@
         "author": "James L.",
         "location": "Toronto",
         "beer": "CITRUS IPA",
-        "image": "https://via.placeholder.com/300x300?text=James+L"
+        "image": "../../images/james.jpg"
       },
       {
         "id": 3,
@@ -24,7 +24,7 @@
         "author": "Emily R.",
         "location": "Calgary",
         "beer": "PALE ALE",
-        "image": "https://via.placeholder.com/300x300?text=Emily+R"
+        "image": "../../images/emily.jpg"
       },
       {
         "id": 4,
@@ -32,7 +32,7 @@
         "author": "Marcus T.",
         "location": "Montreal",
         "beer": "AMBER ALE",
-        "image": "https://via.placeholder.com/300x300?text=Marcus+T"
+        "image": "../../images/marcus.jpg"
       }
     ]
   }
