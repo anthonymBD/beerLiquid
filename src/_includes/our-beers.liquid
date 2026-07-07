@@ -1,6 +1,10 @@
 {%- assign featured_product = products | where: "handle", "lakefront-linger-sour" | first -%}
 
-<section class="beers-section" id="products" style="--bg: {{ featured_product.metafields.custom.theme_bg }};">
+<section class="beers-section" id="products" style="
+--bg: {{ featured_product.metafields.custom.theme_bg }};
+--text: {{ featured_product.metafields.custom.theme_text }};
+--accent: {{ featured_product.metafields.custom.theme_accent }};
+">
   <div class="container">
     <h2 class="beers-section__title">OUR BEERS</h2>
 

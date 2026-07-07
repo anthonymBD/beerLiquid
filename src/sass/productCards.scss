@@ -1,13 +1,13 @@
 .beers-section {
         background: color-mix(in srgb, var(--bg, #0F7C7A) 100%, black 30%);
-            color: #fff;
+            color: color-mix(in srgb, var(--text, #fff) 100%, black 30%);
             padding: 120px 0;
         }
 
 .beers-section__title {
             font-size: clamp(80px, 15vw, 200px);
             margin-bottom: 80px;
-            text-align: center;
+            text-align: left
         }
 
 .beers-grid {
