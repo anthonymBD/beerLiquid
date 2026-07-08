@@ -21,11 +21,10 @@ nav{
 
 }
 .nav-logo {
+  width: 260px;
   height: auto;
-  width: 200px;
-  display: cover;
-  display: flex;
-  object-fit: fill;
+  display: block;
+  object-fit: contain;
 }
 
 

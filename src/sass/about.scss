@@ -1,15 +1,16 @@
 @use "./variables" as *;
 
 .about {
-  background: #b85a16;
-  color: #fff;
+  background: #B0E8DE;
+  color: #355468;
   isolation: isolate;
-  z-index: 2;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(4rem, 9vw, 7.5rem) 0;
+  margin-top: -14vh;
+  padding: calc(clamp(4rem, 9vw, 7.5rem) + 14vh) 0 clamp(4rem, 9vw, 7.5rem);
   position: relative;
 }
 
@@ -45,7 +46,8 @@
 @media (max-width: 1024px) {
   .about {
     min-height: auto;
-    padding: clamp(3.5rem, 8vw, 5rem) 0;
+    margin-top: -8vh;
+    padding: calc(clamp(3.5rem, 8vw, 5rem) + 8vh) 0 clamp(3.5rem, 8vw, 5rem);
   }
 }
 

@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
+  <style>
+    html,
+    body {
+      background: #B0E8DE;
+      color: #355468;
+    }
+
+    /* Critical nav styles to prevent first-paint width jump */
+    header nav {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 400;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: #fff;
+      border-bottom: 1px solid #e8e4dc;
+    }
+
+    header nav ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: clamp(0.8rem, 2vw, 2rem);
+    }
+  </style>
 </head>
 <body data-barba="wrapper">
 
